@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusHire™ — Smarter Campus Placements | Institutional Placement Engine</title>
+    <meta name="description"
+        content="Discover opportunities, connect with leading companies, apply for placement drives, and track your career journey — all in one centralized institutional platform.">
+
+    <!-- Modern Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+</head>
+
+<body>
+
+    <!-- Ambient Lighting Elements -->
+    <div class="ambient-glow"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <!-- Brand Logo & Title -->
+                <a href="#hero" class="brand-wrapper">
+                    <img src="assets/images/logo.jpg" alt="CampusHire Logo" class="brand-logo-img">
+                    <div class="brand-text-block">
+                        <div class="brand-title">Campus<span>Hire</span></div>
+                        <div class="brand-subtitle">Smarter Campus Placements</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#drives" class="nav-link">Explore Drives</a></li>
+                        <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                        <li><a href="#recruiters" class="nav-link">Top Recruiters</a></li>
+                        <li><a href="#student-portal" class="nav-link">Student Portal</a></li>
+                        <li><a href="#tpo-portal" class="nav-link">TPO Operations</a></li>
+                        <li><a href="#voices" class="nav-link">Campus Voices</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Role Switcher & Auth Actions -->
+                <div class="header-actions">
+                    <!-- Role Switcher Pill -->
+                    <div class="role-switcher-pill" id="activeRolePill" onclick="App.openModal('roleSwitcherModal')"
+                        title="Click to switch demo role">
+                        <span class="role-dot" id="activeRoleDot"></span>
+                        <span id="activeRoleName" style="font-weight: 700;">Rahul Verma (Student)</span>
+                        <span style="font-size: 0.7rem; color: var(--text-subtle);">▼</span>
+                    </div>
+
+                    <button class="btn btn-secondary btn-sm" onclick="App.openModal('studentLoginModal')"
+                        id="headerLoginBtn">
+                        Student Login
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="App.openModal('tpoLoginModal')">
+                        TPO Desk
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================
+       Hero Section (Matches PDF Page 1)
+       =================================================================== -->
+    <section class="hero-section" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Hero Content -->
+                <div class="hero-content">
+                    <div>
+                        <div class="pill-badge">✨ Smarter Campus Placements</div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Your Career <br>
+                        <span class="gradient-text">Starts Here.</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        Discover opportunities, connect with leading companies, apply for placement drives, and track
+                        your career
+                        journey — all in one centralized institutional platform.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#drives" class="btn btn-primary btn-lg">
+                            Explore Opportunities ➔
+                        </a>
+                        <button class="btn btn-secondary btn-lg" onclick="App.openModal('studentLoginModal')">
+                            🔒 Student Login
+                        </button>
+                    </div>
+
+                    <!-- Social Proof Avatars -->
+                    <div class="social-proof-wrap">
+                        <div class="avatar-stack">
+                            <div class="avatar-pill" style="background: #3B82F6;">PV</div>
+                            <div class="avatar-pill" style="background: #10B981;">AK</div>
+                            <div class="avatar-pill" style="background: #8B5CF6;">SN</div>
+                            <div class="avatar-pill count">+490</div>
+                        </div>
+                        <div class="social-proof-text">
+                            <strong>Join 500+ students exploring opportunities</strong>
+                            Built for students. Trusted by placement teams across top universities.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Live Showcase Card (Matches PDF Page 1) -->
+                <div class="hero-card-showcase">
+                    <!-- Floating badge 1 -->
+                    <div class="floating-metric-badge badge-top-left">
+                        <div class="floating-icon" style="background: rgba(99,102,241,0.15); color: #818CF8;">📁</div>
+                        <div>
+                            <p>12 Applications</p>
+                            <span>Auto-tracked live</span>
+                        </div>
+                    </div>
+
+                    <!-- Floating badge 2 -->
+                    <div class="floating-metric-badge badge-bottom-right">
+                        <div class="floating-icon"
+                            style="background: rgba(16,185,129,0.15); color: var(--emerald-500);">📅</div>
+                        <div>
+                            <p>3 Interviews Scheduled</p>
+                            <span>Next: Zoho Technical (Tomorrow)</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Card Body -->
+                    <div class="hero-card-bg">
+                        <div class="showcase-header">
+                            <div class="student-greeting-box">
+                                <h3 id="heroStudentGreeting">Good Morning, Rahul 👋</h3>
+                                <p id="heroStudentBranch">B.Tech CSE (2025 Batch) • CGPA 8.7</p>
+                            </div>
+                            <div class="status-badge-active">
+                                <span class="role-dot"></span> Drive Active
+                            </div>
+                        </div>
+
+                        <!-- Alert Strip -->
+                        <div class="alert-strip">
+                            <div class="alert-strip-left">
+                                <span>🔔</span> 3 new drives opened for CSE branch today
+                            </div>
+                            <span class="alert-view-all"
+                                onclick="document.getElementById('drives').scrollIntoView({behavior: 'smooth'})">View
+                                All</span>
+                        </div>
+
+                        <!-- Mini Opportunities List -->
+                        <div class="mini-opp-list" id="heroMiniDrivesList">
+                            <!-- Dynamically populated from JS -->
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="showcase-footer">
+                            <div class="tpo-verified-indicator">
+                                <span>✔</span> Verified by TPO Officer
+                            </div>
+                            <span style="color: var(--text-subtle);">Student ID: 21CS084</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Stats Counter Strip (Matches PDF Page 2)
+       =================================================================== -->
+    <section class="stats-strip-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="statTotalStudents">500+</div>
+                    <div class="stat-title">Students Enrolled</div>
+                    <div class="stat-subtext">Registered & verified profiles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="statVisitingCompanies">50+</div>
+                    <div class="stat-title">Visiting Companies</div>
+                    <div class="stat-subtext">Active campus recruitment partners</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="statOpenDrives">100+</div>
+                    <div class="stat-title">Opportunities</div>
+                    <div class="stat-subtext">Open campus placement drives</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="statPlacementSuccess">95%</div>
+                    <div class="stat-title">Placement Success</div>
+                    <div class="stat-subtext">Consistent record across branches</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Live Campus Drives Explorer (Matches PDF Pages 2, 3, 4)
+       =================================================================== -->
+    <section class="section-padding" id="drives">
+        <div class="container">
+            <div class="section-header-block">
+                <span class="section-eyebrow">LIVE CAMPUS DRIVES</span>
+                <h2 class="section-title">Find Your Next Opportunity</h2>
+                <p class="section-subtitle">
+                    Explore placement opportunities from leading enterprise companies and find roles tailored precisely
+                    to your
+                    department and skills.
+                </p>
+            </div>
+
+            <!-- Search & Filters Toolbar -->
+            <div class="drives-toolbar">
+                <div class="search-input-box">
+                    <span class="search-icon-pos">🔍</span>
+                    <input type="text" id="driveSearchInput" class="search-input"
+                        placeholder="Search by role, company name, skills, or city...">
+                </div>
+
+                <div class="filter-pills-group">
+                    <button class="filter-btn active" data-filter="all">All Drives</button>
+                    <button class="filter-btn" data-filter="eligible">Eligible for Me (CGPA ≥ 7.5)</button>
+                    <button class="filter-btn" data-filter="tier1">Tier 1 (₹8+ LPA)</button>
+                    <button class="filter-btn" data-filter="tech">Software & Dev</button>
+                </div>
+            </div>
+
+            <!-- Live Drives Grid (Powered by MySQL & Java REST API) -->
+            <div class="drives-grid" id="drivesGrid">
+                <!-- Populated dynamically via App.renderDrivesGrid() -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Placement Roadmap Section (Matches PDF Pages 4, 5)
+       =================================================================== -->
+    <section class="section-padding" id="roadmap"
+        style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="section-header-block">
+                <span class="section-eyebrow">PLACEMENT ROADMAP</span>
+                <h2 class="section-title">From Student to Placement</h2>
+                <p class="section-subtitle">
+                    A friction-free structured journey from profile setup to receiving your corporate offer letter.
+                </p>
+            </div>
+
+            <div class="roadmap-grid">
+                <!-- Step 01 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-card-header">
+                        <div class="roadmap-icon-wrap">🎖️</div>
+                        <span class="roadmap-step-num">01</span>
+                    </div>
+                    <h4>Create Profile</h4>
+                    <p>
+                        Build your student profile with verified academic marks, branches, certifications, and technical
+                        skills.
+                    </p>
+                </div>
+
+                <!-- Step 02 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-card-header">
+                        <div class="roadmap-icon-wrap">🧭</div>
+                        <span class="roadmap-step-num">02</span>
+                    </div>
+                    <h4>Discover Opportunities</h4>
+                    <p>
+                        Browse verified campus hiring partners and active drives configured specifically to your
+                        eligibility
+                        threshold.
+                    </p>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-card-header">
+                        <div class="roadmap-icon-wrap">🚀</div>
+                        <span class="roadmap-step-num">03</span>
+                    </div>
+                    <h4>Apply & Track</h4>
+                    <p>
+                        Submit 1-click applications and track your round progression (Aptitude, Tech Round 1, HR) in
+                        real time.
+                    </p>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="roadmap-card">
+                    <div class="roadmap-card-header">
+                        <div class="roadmap-icon-wrap">🏆</div>
+                        <span class="roadmap-step-num">04</span>
+                    </div>
+                    <h4>Get Placed</h4>
+                    <p>
+                        Receive verified offer letters, complete onboarding forms, and kickstart your dream career.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Top Recruiters Section (Matches PDF Page 5)
+       =================================================================== -->
+    <section class="section-padding" id="recruiters">
+        <div class="container">
+            <div class="section-header-block">
+                <span class="section-eyebrow">TOP RECRUITERS</span>
+                <h2 class="section-title">Connect With Leading Companies</h2>
+                <p class="section-subtitle">
+                    CampusHire partners directly with Fortune 500 tech leaders and high-growth innovators seeking fresh
+                    talent.
+                </p>
+            </div>
+
+            <div class="recruiters-grid">
+                <!-- Zoho -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #E5252A;">Z</div>
+                    <h4>Zoho</h4>
+                    <span>SaaS Leader</span>
+                </div>
+
+                <!-- TCS -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #1B365D;">TCS</div>
+                    <h4>TCS</h4>
+                    <span>Day-1 Recruiter</span>
+                </div>
+
+                <!-- Infosys -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #007CC3;">INF</div>
+                    <h4>Infosys</h4>
+                    <span>Global MNC</span>
+                </div>
+
+                <!-- Accenture -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #A100FF;">ACN</div>
+                    <h4>Accenture</h4>
+                    <span>Enterprise</span>
+                </div>
+
+                <!-- Wipro -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #FF6600;">WIP</div>
+                    <h4>Wipro</h4>
+                    <span>Digital Tech</span>
+                </div>
+
+                <!-- Cognizant -->
+                <div class="recruiter-card">
+                    <div class="recruiter-logo-badge" style="background: #1F51FF;">CTS</div>
+                    <h4>Cognizant</h4>
+                    <span>GenC Partner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Student Portal & Candidate Empowerment (Matches PDF Page 6)
+       =================================================================== -->
+    <section class="section-padding portal-showcase-section" id="student-portal">
+        <div class="container">
+            <div class="portal-grid-split">
+                <!-- Left: Value Props Checklist -->
+                <div>
+                    <span class="section-eyebrow">CANDIDATE EMPOWERMENT</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">
+                        Everything You Need for Your Placement Journey
+                    </h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.65;">
+                        Stop juggling multiple chat groups, unorganized spreadsheets, and ambiguous test schedules.
+                        CampusHire
+                        streamlines every milestone.
+                    </p>
+
+                    <div class="checklist-features">
+                        <div class="check-item">
+                            <span class="check-icon">✔</span>
+                            <p>Personalized opportunities matched by department, CGPA, and coding proficiency</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">✔</span>
+                            <p>Instant eligibility transparency against live recruiter cut-offs</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">✔</span>
+                            <p>1-Click fast applications with auto-synced institutional verified resumes</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">✔</span>
+                            <p>Real-time interview stage notifications and direct slot booking</p>
+                        </div>
+                        <div class="check-item">
+                            <span class="check-icon">✔</span>
+                            <p>Secure offer letter digital repository with automated acceptance tracking</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 32px;">
+                        <button class="btn btn-primary" onclick="App.openModal('profileEditModal')">
+                            Edit Student Credentials ✏️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Live Student Portal Operations Deck -->
+                <div>
+                    <div class="student-deck-card">
+                        <div class="deck-header">
+                            <div>
+                                <span
+                                    style="font-size: 0.72rem; color: var(--primary-500); font-weight: 700; text-transform: uppercase;">STUDENT
+                                    PORTAL</span>
+                                <h3 id="portalWelcomeName">Welcome back, Rahul Verma</h3>
+                            </div>
+                            <span class="pill-badge success">Active Placement Season</span>
+                        </div>
+
+                        <!-- 5 Big KPI Metrics (PDF Page 6) -->
+                        <div class="deck-metrics-bar">
+                            <div class="deck-metric-cell">
+                                <h4>85%</h4>
+                                <span>Profile Score</span>
+                            </div>
+                            <div class="deck-metric-cell">
+                                <h4>24</h4>
+                                <span>Drives Open</span>
+                            </div>
+                            <div class="deck-metric-cell">
+                                <h4 id="portalAppliedCount">8</h4>
+                                <span>Applied</span>
+                            </div>
+                            <div class="deck-metric-cell">
+                                <h4>3</h4>
+                                <span>Interviews</span>
+                            </div>
+                            <div class="deck-metric-cell">
+                                <h4 id="portalOffersCount">1</h4>
+                                <span>Offers</span>
+                            </div>
+                        </div>
+
+                        <!-- Profile Completion Progress -->
+                        <div class="profile-progress-wrap">
+                            <div class="progress-header">
+                                <span>Profile Completion</span>
+                                <span style="color: var(--primary-500);">85% Complete</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Applications Header -->
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                            <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-heading);">Recent
+                                Applications</h4>
+                            <span
+                                style="font-size: 0.8rem; color: var(--primary-500); font-weight: 600; cursor: pointer;">Live
+                                Track</span>
+                        </div>
+
+                        <!-- Recent Applications Tracked Live -->
+                        <div class="app-tracker-list" id="portalAppsList">
+                            <!-- Dynamically populated from JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       TPO Central Operations Deck (Matches PDF Page 7)
+       =================================================================== -->
+    <section class="section-padding" id="tpo-portal">
+        <div class="container">
+            <div class="section-header-block">
+                <span class="section-eyebrow">FOR TPO & INSTITUTION LEADERS</span>
+                <h2 class="section-title">Powerful Tools for Placement Teams</h2>
+                <p class="section-subtitle">
+                    Manage students, visiting companies, multi-tier placement drives, live round schedules, and
+                    NAAC/NIRF audit
+                    records from one centralized console.
+                </p>
+            </div>
+
+            <div class="tpo-deck-container">
+                <!-- Deck Header -->
+                <div class="tpo-deck-header">
+                    <div>
+                        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-heading);">TPO Central
+                            Operations Deck
+                        </h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">Officer in Charge: Dr. K. Ramanathan •
+                            Head of
+                            Training & Placement</p>
+                    </div>
+                    <span class="pill-badge" style="background: rgba(99,102,241,0.15); color: #A5B4FC;">Academic Year
+                        2024-25</span>
+                </div>
+
+                <!-- 4 Stats Cards (PDF Page 7) -->
+                <div class="tpo-deck-stats-grid">
+                    <div class="tpo-stat-box">
+                        <h4 id="tpoDeckStudents">1,240</h4>
+                        <span>Total Enrolled Students</span>
+                    </div>
+                    <div class="tpo-stat-box">
+                        <h4 id="tpoDeckCompanies">58</h4>
+                        <span>Active Visiting Companies</span>
+                    </div>
+                    <div class="tpo-stat-box">
+                        <h4 id="tpoDeckDrives">112</h4>
+                        <span>Open Placement Drives</span>
+                    </div>
+                    <div class="tpo-stat-box">
+                        <h4 id="tpoDeckApplications">3,420</h4>
+                        <span>Processed Applications</span>
+                    </div>
+                </div>
+
+                <!-- Offers Highlight Card -->
+                <div class="tpo-offers-highlight-card">
+                    <div>
+                        <h3 id="tpoDeckOffers">482 Offers Issued</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">
+                            87.4% Target Achieved (Highest Package: <strong style="color: #60A5FA;">₹42 LPA</strong>)
+                        </p>
+                    </div>
+                    <button class="btn btn-emerald btn-sm" onclick="App.downloadEligibilityCsv()">
+                        📥 Download NAAC Audit Report
+                    </button>
+                </div>
+
+                <!-- Quick Actions Bar (Matches PDF Page 7) -->
+                <div class="tpo-quick-actions-bar">
+                    <span
+                        style="font-size: 0.82rem; font-weight: 700; color: var(--text-heading); margin-right: 8px;">Quick
+                        Actions:</span>
+
+                    <button class="btn btn-primary btn-sm" onclick="App.openModal('scheduleDriveModal')">
+                        ➕ Schedule New Drive
+                    </button>
+
+                    <button class="btn btn-secondary btn-sm" onclick="App.downloadEligibilityCsv()">
+                        📥 Export Eligibility List (CSV)
+                    </button>
+
+                    <button class="btn btn-secondary btn-sm" onclick="App.openModal('publishNoticeModal')">
+                        📢 Publish Results Alert
+                    </button>
+
+                    <button class="btn btn-secondary btn-sm" onclick="App.openModal('verificationManagerModal')">
+                        🛡️ Verify Students
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Campus Voices / Testimonials (Matches PDF Page 8)
+       =================================================================== -->
+    <section class="section-padding" id="voices"
+        style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="section-header-block">
+                <span class="section-eyebrow">CAMPUS VOICES</span>
+                <h2 class="section-title">Built for the Entire Campus Community</h2>
+                <p class="section-subtitle">
+                    Hear how CampusHire simplifies outcomes for candidates, placement directors, and enterprise
+                    recruiters.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="star-rating-row">★★★★★</div>
+                        <p class="testimonial-quote">
+                            “CampusHire makes it much easier to find opportunities and track my applications in one
+                            place. No more
+                            missing drive deadlines on chaotic WhatsApp groups!”
+                        </p>
+                    </div>
+                    <div class="author-block">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);">PS
+                        </div>
+                        <div class="author-info">
+                            <h5>Priya Sundaram</h5>
+                            <p>Final Year CSE Student (Placed at Zoho)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="star-rating-row">★★★★★</div>
+                        <p class="testimonial-quote">
+                            “Managing placement drives and student applications becomes seamless. Filtering eligible
+                            candidates for
+                            Day-1 companies takes seconds instead of hours of Excel wrangling.”
+                        </p>
+                    </div>
+                    <div class="author-block">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #10B981, #047857);">KR
+                        </div>
+                        <div class="author-info">
+                            <h5>Dr. K. Ramanathan</h5>
+                            <p>Head of Training & Placement (TPO)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div>
+                        <div class="star-rating-row">★★★★★</div>
+                        <p class="testimonial-quote">
+                            “The platform provides verified student credentials, CGPA records, and streamlined round
+                            scheduling.
+                            Hiring top campus talent is smooth, fast, and transparent.”
+                        </p>
+                    </div>
+                    <div class="author-block">
+                        <div class="author-avatar" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);">AR
+                        </div>
+                        <div class="author-info">
+                            <h5>Ananya Roy</h5>
+                            <p>University Talent Acquisition Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Call to Action Banner (Matches PDF Page 9)
+       =================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="cta-banner-wrapper">
+                <span class="pill-badge" style="margin-bottom: 16px;">CAMPUS PLACEMENT ENGINE 2025</span>
+                <h2>Ready to Accelerate Your Campus Placements?</h2>
+                <p>
+                    Join hundreds of motivated students and tier-1 institutions using CampusHire to digitize interviews,
+                    criteria
+                    checks, and dream careers.
+                </p>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <button class="btn btn-primary btn-lg" onclick="App.openModal('registerStudentModal')">
+                        Get Started as Student ➔
+                    </button>
+                    <button class="btn btn-secondary btn-lg" onclick="App.openModal('tpoLoginModal')">
+                        🏛️ Institution / TPO Portal
+                    </button>
+                </div>
+
+                <div class="trust-badges-row">
+                    <div class="trust-badge-item">
+                        <span>🛡️</span> Instant verification
+                    </div>
+                    <div class="trust-badge-item">
+                        <span>⚡</span> 1-Click setup
+                    </div>
+                    <div class="trust-badge-item">
+                        <span>🏢</span> Zero institutional fees
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+       Institutional Footer (Matches PDF Pages 9, 10)
+       =================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand Info -->
+                <div class="footer-brand-col">
+                    <div class="brand-wrapper" style="margin-bottom: 12px;">
+                        <img src="assets/images/logo.jpg" alt="CampusHire Logo" class="brand-logo-img">
+                        <div class="brand-title">Campus<span>Hire</span></div>
+                    </div>
+                    <p>
+                        The institutional placement operations and recruitment platform powering career launchpads
+                        across 400+
+                        accredited universities and enterprise hiring partners.
+                    </p>
+                    <div class="iso-cert-pill">
+                        🔒 ISO/IEC 27001 SECURED PORTAL
+                    </div>
+                </div>
+
+                <!-- Col 2: Campus Network -->
+                <div class="footer-nav-col">
+                    <h5>Campus Network</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="#drives">Partner Colleges</a></li>
+                        <li><a href="#tpo-portal">TPO Management Suite</a></li>
+                        <li><a href="#drives">Centralized Placement Drives</a></li>
+                        <li><a href="#tpo-portal">NIRF & NAAC Audit Logs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Corporate & Hiring -->
+                <div class="footer-nav-col">
+                    <h5>Corporate & Hiring</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="#recruiters">Recruiter Console</a></li>
+                        <li><a href="#drives">Automated Screening Tests</a></li>
+                        <li><a href="#student-portal">Live Interview Suites</a></li>
+                        <li><a href="#student-portal">Offer Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Governance & Trust -->
+                <div class="footer-nav-col">
+                    <h5>Governance & Trust</h5>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Degree & CGPA Verification</a></li>
+                        <li><a href="#">Privacy & FERPA Compliance</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security Whitepaper</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom-bar">
+                <div>
+                    © 2025 CampusHire Technologies Inc. All placement workflows certified.
+                </div>
+                <div>
+                    System Status: <span style="color: var(--emerald-500); font-weight: 700;">● 99.98% Available</span>
+                    (MySQL &
+                    Java Engine Online)
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================
+       Interactive Modals
+       =================================================================== -->
+
+    <!-- 1. Student Login Modal -->
+    <div class="modal-overlay" id="studentLoginModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Student Login</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+
+            <div class="quick-cred-strip">
+                <span>Demo:</span>
+                <button class="quick-cred-btn"
+                    onclick="document.getElementById('studEmail').value='rahul.verma@college.edu'; document.getElementById('studPass').value='student123';">
+                    Rahul Verma (8.7 CGPA)
+                </button>
+                <button class="quick-cred-btn"
+                    onclick="document.getElementById('studEmail').value='priya.sundaram@college.edu'; document.getElementById('studPass').value='student123';">
+                    Priya Sundaram (9.1 CGPA)
+                </button>
+            </div>
+
+            <form id="studentLoginForm"
+                onsubmit="event.preventDefault(); App.switchRole('STUDENT'); App.closeAllModals();">
+                <div class="form-group">
+                    <label class="form-label">College Email Address</label>
+                    <input type="email" id="studEmail" class="form-input" value="rahul.verma@college.edu" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="studPass" class="form-input" value="student123" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Sign In to Student Dashboard
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. TPO Login Modal -->
+    <div class="modal-overlay" id="tpoLoginModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>TPO Operations Desk Login</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+
+            <div class="quick-cred-strip">
+                <span>Demo Officer:</span>
+                <button class="quick-cred-btn"
+                    onclick="document.getElementById('tpoEmail').value='tpo@college.edu'; document.getElementById('tpoPass').value='admin123';">
+                    Dr. K. Ramanathan (TPO Head)
+                </button>
+            </div>
+
+            <form id="tpoLoginForm" onsubmit="event.preventDefault(); App.switchRole('TPO'); App.closeAllModals();">
+                <div class="form-group">
+                    <label class="form-label">Institutional Officer Email</label>
+                    <input type="email" id="tpoEmail" class="form-input" value="tpo@college.edu" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">TPO Master Password</label>
+                    <input type="password" id="tpoPass" class="form-input" value="admin123" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Access TPO Central Console
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 3. Register Student Modal -->
+    <div class="modal-overlay" id="registerStudentModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Student Registration</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <form id="studentRegisterForm" onsubmit="
+        event.preventDefault(); 
+        const form = this;
+        Api.registerStudent({
+          fullName: form.regName.value,
+          email: form.regEmail.value,
+          password: 'password123',
+          rollNo: form.regRoll.value,
+          department: form.regDept.value,
+          cgpa: parseFloat(form.regCgpa.value) || 8.0,
+          skills: form.regSkills.value
+        }).then(res => {
+          if (res.success) {
+            App.showToast('Registration successful! Welcome to CampusHire.', 'success');
+            App.closeAllModals();
+            App.switchRole('STUDENT');
+          } else {
+            App.showToast(res.error || 'Registration failed', 'error');
+          }
+        });
+      ">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="regName" class="form-input" placeholder="e.g. Ankit Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Institutional Email</label>
+                    <input type="email" id="regEmail" class="form-input" placeholder="ankit@college.edu" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="form-group">
+                        <label class="form-label">Roll Number</label>
+                        <input type="text" id="regRoll" class="form-input" placeholder="21CS110" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Department / Branch</label>
+                        <select id="regDept" class="form-select">
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cumulative CGPA (0.00 - 10.00)</label>
+                    <input type="number" step="0.01" min="0" max="10" id="regCgpa" class="form-input" placeholder="8.50"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Key Technical Skills</label>
+                    <input type="text" id="regSkills" class="form-input" placeholder="Java, Python, SQL, React"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Submit & Create Profile
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 4. Drive Details Modal -->
+    <div class="modal-overlay" id="driveDetailsModal">
+        <div class="modal-window wide">
+            <div class="modal-header">
+                <h3 id="driveModalTitle">Drive Details</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <div id="driveModalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+            <div
+                style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 12px;">
+                <button class="btn btn-secondary" onclick="App.closeAllModals()">Close</button>
+                <button class="btn btn-primary" id="driveModalApplyBtn">Submit 1-Click Application</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Schedule Drive Modal (TPO Action) -->
+    <div class="modal-overlay" id="scheduleDriveModal">
+        <div class="modal-window wide">
+            <div class="modal-header">
+                <h3>Schedule New Campus Placement Drive</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <form onsubmit="App.handleScheduleDriveSubmit(event)">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label class="form-label">Recruiter / Company</label>
+                        <select name="companyId" class="form-select" required>
+                            <option value="1">Zoho Corporation</option>
+                            <option value="2">Infosys Limited</option>
+                            <option value="3">Tata Consultancy Services (TCS)</option>
+                            <option value="4">Accenture</option>
+                            <option value="5">Wipro</option>
+                            <option value="6">Cognizant</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Role Title</label>
+                        <input type="text" name="roleTitle" class="form-input"
+                            placeholder="e.g. Cloud Solutions Engineer" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label class="form-label">Package (CTC Display Text)</label>
+                        <input type="text" name="packageCtc" class="form-input" placeholder="e.g. ₹9.5–12.0 LPA"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Package Sort Value (LPA Numeric)</label>
+                        <input type="number" step="0.1" name="packageNum" class="form-input" placeholder="9.5" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label class="form-label">Min CGPA Cutoff</label>
+                        <input type="number" step="0.1" name="minCgpa" class="form-input" value="7.5" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Job Location</label>
+                        <input type="text" name="location" class="form-input" value="Bengaluru, India" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Open Positions</label>
+                        <input type="number" name="openings" class="form-input" value="40" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Eligible Branches</label>
+                    <input type="text" name="eligibleBranches" class="form-input" value="CSE, IT, ECE" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Required Skills (Comma separated)</label>
+                    <input type="text" name="requiredSkills" class="form-input" value="Java, Spring Boot, MySQL, Git"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Application Window / Deadline</label>
+                    <input type="text" name="deadlineDays" class="form-input" value="7 Days Left" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
+                    🚀 Publish Drive to Database
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 6. View Rounds Modal (Matches PDF Page 6 "View Rounds") -->
+    <div class="modal-overlay" id="roundsModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 id="roundsModalTitle">Application Round Progression</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <div id="roundsModalContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Role Switcher Modal -->
+    <div class="modal-overlay" id="roleSwitcherModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Switch Interactive Persona</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
+                Test the complete interactive platform from different user viewpoints:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 14px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;"
+                    onclick="App.switchRole('STUDENT'); App.closeAllModals();">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">🎓 Rahul Verma (Student Persona)
+                        </h4>
+                        <p style="color: var(--text-muted); font-size: 0.78rem;">CGPA 8.7 • Eligible for all major
+                            drives • 1-Click
+                            apply enabled</p>
+                    </div>
+                    <span class="btn btn-primary btn-sm">Switch</span>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 14px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;"
+                    onclick="App.switchRole('TPO'); App.closeAllModals();">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">🏛️ Dr. K. Ramanathan (TPO Head
+                            Persona)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.78rem;">Central operations deck • Drive
+                            scheduler • Audit
+                            CSV exporter</p>
+                    </div>
+                    <span class="btn btn-secondary btn-sm">Switch</span>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 14px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;"
+                    onclick="App.switchRole('GUEST'); App.closeAllModals();">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">🌐 Guest / Public Visitor</h4>
+                        <p style="color: var(--text-muted); font-size: 0.78rem;">Browse drives, view institutional
+                            roadmap and
+                            campus voices</p>
+                    </div>
+                    <span class="btn btn-secondary btn-sm">Switch</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Edit Profile Modal -->
+    <div class="modal-overlay" id="profileEditModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Edit Student Credentials</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <form onsubmit="
+        event.preventDefault();
+        const form = this;
+        Api.updateStudent(1, {
+          fullName: form.editName.value,
+          department: form.editDept.value,
+          cgpa: parseFloat(form.editCgpa.value),
+          skills: form.editSkills.value,
+          profileScore: 90
+        }).then(res => {
+          if (res.success) {
+            App.state.user = res.data;
+            App.showToast('Profile credentials saved to MySQL database!', 'success');
+            App.closeAllModals();
+            App.renderAll();
+          }
+        });
+      ">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="editName" class="form-input" value="Rahul Verma" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Department / Branch</label>
+                    <input type="text" id="editDept" class="form-input" value="CSE" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">CGPA Score</label>
+                    <input type="number" step="0.01" min="0" max="10" id="editCgpa" class="form-input" value="8.70"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Technical Skills (Comma separated)</label>
+                    <input type="text" id="editSkills" class="form-input"
+                        value="Java, SQL, Spring Boot, Problem Solving, React" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Update & Sync with Database
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 9. Publish Notice Modal (TPO) -->
+    <div class="modal-overlay" id="publishNoticeModal">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3>Broadcast Institutional Announcement</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <form onsubmit="
+        event.preventDefault();
+        const form = this;
+        Api.createAnnouncement({
+          title: form.noticeTitle.value,
+          content: form.noticeContent.value,
+          targetBranch: form.noticeBranch.value
+        }).then(res => {
+          if (res.success) {
+            App.showToast('Announcement broadcasted to student portal!', 'success');
+            App.closeAllModals();
+            form.reset();
+          }
+        });
+      ">
+                <div class="form-group">
+                    <label class="form-label">Notice Headline</label>
+                    <input type="text" id="noticeTitle" class="form-input"
+                        placeholder="e.g. Microsoft Day-1 Drive Confirmed" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Target Branch / Audience</label>
+                    <select id="noticeBranch" class="form-select">
+                        <option value="ALL">All Eligible Batches</option>
+                        <option value="CSE">CSE Department</option>
+                        <option value="IT">IT Department</option>
+                        <option value="ECE">ECE Department</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Details / Circular Text</label>
+                    <textarea id="noticeContent" class="form-textarea"
+                        placeholder="Enter drive dates, reporting timings, and mandatory dress code..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    Broadcast to Students
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 10. Student Verification Manager Modal (TPO) -->
+    <div class="modal-overlay" id="verificationManagerModal">
+        <div class="modal-window wide">
+            <div class="modal-header">
+                <h3>Student Credentials Verification Desk</h3>
+                <button class="modal-close-btn" onclick="App.closeAllModals()">×</button>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 20px;">
+                Review student transcripts and certify eligibility for upcoming campus placement drives:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 12px;" id="verificationListContainer">
+                <!-- Sample verification cards -->
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px 18px; border-radius: 10px;">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">Rahul Verma (21CS084)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">B.Tech CSE • CGPA 8.70 • Verified by TPO
+                            Head</p>
+                    </div>
+                    <span class="pill-badge success">✔ Verified</span>
+                </div>
+
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px 18px; border-radius: 10px;">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">Priya Sundaram (21CS102)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">B.Tech CSE • CGPA 9.10 • Verified by TPO
+                            Head</p>
+                    </div>
+                    <span class="pill-badge success">✔ Verified</span>
+                </div>
+
+                <div
+                    style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 14px 18px; border-radius: 10px;">
+                    <div>
+                        <h4 style="color: var(--text-heading); font-size: 0.95rem;">Ankit Sharma (21IT045)</h4>
+                        <p style="color: var(--text-muted); font-size: 0.8rem;">B.Tech IT • CGPA 7.30 • Transcripts
+                            pending review
+                        </p>
+                    </div>
+                    <button class="btn btn-emerald btn-sm" onclick="
+            Api.verifyStudent(3, 'VERIFIED').then(() => {
+              App.showToast('Ankit Sharma transcripts verified & certified!', 'success');
+              this.parentElement.querySelector('button').replaceWith(Object.assign(document.createElement('span'), {className: 'pill-badge success', textContent: '✔ Verified'}));
+            });
+          ">
+                        Approve & Certify
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
